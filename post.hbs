@@ -6,12 +6,12 @@
 {{! Everything inside the #post tags pulls data from the post }}
 {{#post}}
 
-<header class="main-header image-bg detail-page {{#if image}}has-cover" style="background-image: url({{image}}){{else}}no-cover{{/if}}">
+<!-- <header class="main-header image-bg detail-page {{#if image}}has-cover" style="background-image: url({{image}}){{else}}no-cover{{/if}}">
     <a href="{{@blog.url}}" class="go-home-page" style="background-image:url({{#if @blog.logo}}{{@blog.logo}}{{else}}{{asset "/assets/go-home.png"}}{{/if}}")></a>
     <h1 class="page-title"><a href="{{@blog.url}}">{{@blog.title}}</a></h1>
     <h2 class="page-description">{{@blog.description}}</h2>
     {{navigation}}
-</header>
+</header> -->
 
 
 <main class="content" role="main">
@@ -20,7 +20,7 @@
         <header class="post-header short-diver">
             <h1 class="post-title">{{title}}</h1>
             <section class="post-meta">
-                Published at <time class="post-date" datetime="{{date format='YYYY-MM-DD'}}">{{date format="DD MMMM YYYY"}}</time>, 
+                Published at <time class="post-date" datetime="{{date format='YYYY-MM-DD'}}">{{date format="DD MMMM YYYY"}}</time>,
                 updated at <time class="post-date" datetime="{{date updated_at format='YYYY-MM-DD'}}">{{date updated_at format="DD MMMM YYYY"}}</time>
                 <br>
                 {{tags prefix=" on "}}
@@ -80,22 +80,24 @@
         </footer>
 
     </article>
+
+    {{> "comment"}}
+
+    <aside class="read-next">
+        {{#prev_post}}<a class="read-next-story prev" href="{{url}}">
+            {{!-- <i aria-hidden="true">←</i> --}}
+            {{title}}
+        </a>
+        {{/prev_post}}
+        {{#next_post}}
+        <a class="read-next-story next" href="{{url}}">
+            {{title}}
+            {{!-- <i aria-hidden="true">→</i> --}}
+        </a>{{/next_post}}
+    </aside>
 </main>
 
-{{> "comment"}}
 
-<aside class="read-next">
-    {{#prev_post}}<a class="read-next-story prev" href="{{url}}">
-        {{!-- <i aria-hidden="true">←</i> --}}
-        {{title}}
-    </a>
-    {{/prev_post}}
-    {{#next_post}}
-    <a class="read-next-story next" href="{{url}}">
-        {{title}}
-        {{!-- <i aria-hidden="true">→</i> --}}
-    </a>{{/next_post}}
-</aside>
 
 {{/post}}
 
@@ -124,7 +126,7 @@
                 </div>
             </div>
             <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
-                <div class="pswp__share-tooltip"></div> 
+                <div class="pswp__share-tooltip"></div>
             </div>
             <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
             </button>
@@ -136,4 +138,3 @@
         </div>
     </div>
 </div>
-

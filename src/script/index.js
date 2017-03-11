@@ -381,10 +381,12 @@
     });
 
     // load comment
-    delegate(document, 'click', '.load-comments button', function () {
-        loadComment();
-        this.style.display = 'none';
-    });
+    // delegate(document, 'click', '.load-comments button', function () {
+    //     loadComment();
+    //     this.style.display = 'none';
+    // });
+    //
+    // loadComment();
 
     // GA
     if (decentThemeConfig.ga) {

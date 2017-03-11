@@ -26,19 +26,48 @@
     <div id="html-wrapper">
         <div id="html">
             <div class="site-wrapper">
+              <header class="main-header detail-page image-bg {{#if @blog.cover}}has-cover" style="background-image: url({{@blog.cover}}){{else}}no-cover{{/if}}">
+                  <!-- <a href="{{@blog.url}}" class="go-home-page" style="background-image:url({{#if @blog.logo}}{{@blog.logo}}{{else}}{{asset "/assets/go-home.png"}}{{/if}}")></a> -->
+
+                  <h1 class="page-title"><a href="{{@blog.url}}">{{@blog.title}}</a></h1>
+                  <h2 class="page-description">{{@blog.description}}</h2>
+                  {{navigation}}
+              </header>
+
+              <div class="outer">
+                <aside class="profile">
+                  <div class="profile-inner">
+                    <div class="base-info profile-block">
+
+                    </div>
+                    <div class="base-info profile-block">
+
+                    </div>
+                  </div>
+                </aside>
 
                 {{! Everything else gets inserted here }}
                 {{{body}}}
 
-                <footer class="site-footer">
-                    <p class="copyright"><a href="{{@blog.url}}">{{@blog.title}}</a> &copy; {{date format="YYYY"}} | <a href="{{@blog.url}}/rss">RSS Feed</a></p>
-                    <p class="poweredby">Proudly published with <a href="https://ghost.org">Ghost</a></p>
-                    <p><a href="https://github.com/serenader2014/decent">decent Theme</a> made by <a href="https://github.com/serenader2014">serenader</a> with <span class="heart">♥</span></p>
-                </footer>
+                <aside class="sidebar">
+                  <div class="widget-wrap">
+                    <h3 class="widget-title">标签云</h3>
+                    <div class="widget">
+                      {{tag_cloud limit="all"}}
+                    </div>
+                  </div>
+                </aside>
 
+              </div>
             </div>
 
             <button class="go-to-top"></button>
+
+            <footer class="site-footer">
+                <p class="copyright"><a href="{{@blog.url}}">{{@blog.title}}</a> &copy; {{date format="YYYY"}} | <a href="{{@blog.url}}/rss">RSS Feed</a></p>
+                <p class="poweredby">Proudly published with <a href="https://ghost.org">Ghost</a></p>
+                <p><a href="https://github.com/serenader2014/decent">decent Theme</a> made by <a href="https://github.com/serenader2014">serenader</a> with <span class="heart">♥</span></p>
+            </footer>
         </div>
     </div>
 

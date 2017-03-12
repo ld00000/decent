@@ -15,14 +15,21 @@
     // margin-left: auto;
     // margin-right: auto;
 
-    .post-content img, .post-title , .post-meta{
+    .post-content img {
         max-width: 700px;
         width: 100%;
         margin: auto;
     }
 
+    .post-title , .post-meta{
+        max-width: 700px;
+        width: 100%;
+    }
+
     .post-meta {
-        margin: 20px auto 0;
+        a:hover {
+          color: #38b7ea;
+        }
     }
 
     .post-header {
@@ -308,4 +315,8 @@
     max-width: 650px;
     margin: auto;
     padding: 0;
+}
+
+.post-date {
+  margin-right: 5px;
 }

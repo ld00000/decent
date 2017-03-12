@@ -18,12 +18,12 @@
     <article class="{{post_class}} single-post">
 
         <header class="post-header short-diver">
-            <h1 class="post-title">{{title}}</h1>
+            <h3 class="post-title">{{title}}</h3>
             <section class="post-meta">
-                Published at <time class="post-date" datetime="{{date format='YYYY-MM-DD'}}">{{date format="YYYY-MM-DD"}}</time>,
-                updated at <time class="post-date" datetime="{{date updated_at format='YYYY-MM-DD'}}">{{date updated_at format="YYYY-MM-DD"}}</time>
-                <br>
-                {{tags prefix=" on "}}
+                <i class="fa fa-calendar"></i>
+                <time class="post-date" datetime="{{date format='YYYY-MM-DD'}}">{{date format="YYYY-MM-DD"}}</time>
+                <i class="fa fa-tag"></i>
+                {{tags}}
             </section>
         </header>
 
@@ -43,13 +43,13 @@
             {{/if}}
 
             <section class="author short-diver">
-                <h4 class="author-name"><a href="{{url}}">{{name}}</a></h4>
+                <!-- <h4 class="author-name"><a href="{{url}}">{{name}}</a></h4>
 
                 {{#if bio}}
                     <p class="author-bio">{{bio}}</p>
                 {{else}}
                     <p>Read <a href="{{url}}">more posts</a> by this author.</p>
-                {{/if}}
+                {{/if}} -->
                 <div class="author-meta">
                     {{#if location}}
                         <li class="author-location">

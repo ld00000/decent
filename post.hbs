@@ -81,8 +81,6 @@
 
     </article>
 
-    {{> "comment"}}
-
     <aside class="read-next">
         {{#prev_post}}<a class="read-next-story prev" href="{{url}}">
             {{!-- <i aria-hidden="true">←</i> --}}
@@ -95,6 +93,8 @@
             {{!-- <i aria-hidden="true">→</i> --}}
         </a>{{/next_post}}
     </aside>
+
+    {{> "comment"}}
 </main>
 
 {{/post}}

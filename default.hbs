@@ -17,6 +17,7 @@
     {{! Styles'n'Scripts }}
     <link rel="stylesheet" type="text/css" href="{{asset "css/screen.css"}}" />
     <link href='//fonts.googleapis.com/css?family=Mrs+Saint+Delafield|Merriweather:300italic,700,300,700italic|Open+Sans:400,700' rel='stylesheet' type='text/css'>
+    <link href="//netdna.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
 
     {{! Ghost outputs important style and meta data with this tag }}
     {{ghost_head}}
@@ -49,14 +50,7 @@
                 {{! Everything else gets inserted here }}
                 {{{body}}}
 
-                <aside class="sidebar">
-                  <div class="widget-wrap">
-                    <h3 class="widget-title">标签云</h3>
-                    <div class="widget">
-                      {{tag_cloud limit="all"}}
-                    </div>
-                  </div>
-                </aside>
+                {{> "sidebar"}}
 
               </div>
             </div>
@@ -66,13 +60,14 @@
             <footer class="site-footer">
                 <p class="copyright"><a href="{{@blog.url}}">{{@blog.title}}</a> &copy; {{date format="YYYY"}} | <a href="{{@blog.url}}/rss">RSS Feed</a></p>
                 <p class="poweredby">Proudly published with <a href="https://ghost.org">Ghost</a></p>
-                <p><a href="https://github.com/serenader2014/decent">decent Theme</a> made by <a href="https://github.com/serenader2014">serenader</a> with <span class="heart">♥</span></p>
+                <!-- <p><a href="https://github.com/serenader2014/decent">decent Theme</a> made by <a href="https://github.com/serenader2014">serenader</a> with <span class="heart">♥</span></p> -->
             </footer>
         </div>
     </div>
 
     <script type="text/javascript" src="{{asset "js/bundle.min.js"}}"></script>
-    {{! Ghost outputs important scripts and data with this tag }}
     {{ghost_foot}}
+
+    {{! Ghost outputs important scripts and data with this tag }}
 </body>
 </html>

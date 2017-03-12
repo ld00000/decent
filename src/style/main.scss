@@ -126,7 +126,7 @@
             width: 40px;
             height: 4px;
             background: #eeeeee;
-            margin: 60px auto 0;
+            margin: 20px auto 0;
         }
 
         .post-header {
@@ -279,7 +279,7 @@
 }
 
 .comment-container {
-    display: none;
+    display: block;
 
     p {
         margin: 20px 0;
@@ -352,6 +352,7 @@
 .sidebar {
     background: #fff none repeat scroll 0 0;
     margin-top: 40px;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.05);
 }
 
 @media screen and (min-width: 1200px) {
@@ -408,5 +409,37 @@
     padding: 0;
     margin: 0;
     text-align: left;
+  }
+}
+
+.tags-container {
+  float: left;
+  padding-left: 0;
+  margin: 0;
+
+  a {
+    color: #999;
+    text-decoration: none;
+  }
+
+  a:hover {
+    color: #565a5f;
+  }
+}
+
+.article-footer {
+    // font-size: 0.85em;
+    line-height: 1.6em;
+    border-top: 1px solid #eceff2;
+    padding-top: 1.6em;
+    margin: 0 20px 20px;
+    overflow: hidden;
+}
+
+.article-comment-link {
+  float: right;
+
+  &:before {
+    margin-right: 5px;
   }
 }

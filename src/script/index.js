@@ -125,6 +125,7 @@
                 tmpElement.innerHTML = response;
                 content.innerHTML = tmpElement.querySelector('#html').innerHTML;
                 fadeIn(content, function () {
+                    loadComment();
                     runScript(true);
                 });
 
@@ -136,6 +137,7 @@
                 if (decentThemeConfig.ga) {
                     ga('send', 'pageview', url);
                 }
+
             })
         })
     }
@@ -143,8 +145,8 @@
     // load comment
     function loadComment() {
         if (decentThemeConfig && decentThemeConfig.duoshuo) {
-            document.querySelector('.ds-thread').style.display = 'block';
             window.duoshuoQuery = {short_name: decentThemeConfig.duoshuo};
+            DUOSHUO = null;
             var ds = document.createElement('script');
             ds.type = 'text/javascript';ds.async = true;
             ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
@@ -152,7 +154,7 @@
             (document.head || document.body).appendChild(ds);
         }
         if (decentThemeConfig && decentThemeConfig.disqus) {
-            document.querySelector('#disqus_thread').style.display = 'block';
+            // document.querySelector('#disqus_thread').style.display = 'block';
             var disqus_config = function () {
                 this.page.url = '{{post.url}}';
                 this.page.identifier = '{{post.id}}';
@@ -286,6 +288,7 @@
     }
 
     document.addEventListener('DOMContentLoaded', function () {
+        loadComment();
         runScript();
 
         // enable the ajax load only if the browser support history and pushState

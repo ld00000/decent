@@ -5,13 +5,21 @@
         <h2 class="post-title"><a href="{{url}}">{{{title}}}</a></h2>
     </header>
     <section class="post-meta">
-        {{author}}
-        {{tags prefix=" on "}}
-        <time class="post-date" datetime="{{date format='YYYY-MM-DD'}}">{{date format="DD MMMM YYYY"}}</time>
+        <!-- {{author}} -->
+        <time class="post-date" datetime="{{date format='YYYY-MM-DD'}}">{{date format="YYYY-MM-DD"}}</time>
     </section>
     <section class="post-excerpt">
         <p>{{excerpt words="26"}} ... <a class="read-more" href="{{url}}">read more</a></p>
     </section>
+    <footer class="article-footer">
+      <ul class="tags-container">
+          <i class="fa fa-tag"></i>
+          {{#tags separator=","}}
+              <li>{{name}}</li>
+          {{/tags}}
+      </ul>
+      <span class="fa fa-comment article-comment-link ds-thread-count" data-thread-key="{{url}}"></span>
+    </footer>
 </article>
 {{/foreach}}
 

@@ -320,3 +320,30 @@
 .post-date {
   margin-right: 5px;
 }
+
+.single-post {
+    header {
+        position: relative;
+
+        &:after {
+            content: '';
+            display: block;
+            width: 40px;
+            height: 4px;
+            // background: #eeeeee;
+            margin: 20px auto 0;
+        }
+
+        .post-header {
+          padding: 20px 20px 0;
+        }
+
+        .post-meta {
+          padding: 10px 0 0;
+        }
+
+        .post-excerpt {
+          padding: 20px 20px 0;
+        }
+    }
+}
